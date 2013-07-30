@@ -63,14 +63,14 @@ void initKeyBoardListener(){
   void keyboardListener(Event event){
     if(event is KeyboardEvent){ 
       KeyboardEvent kEvent = event as KeyboardEvent;    
-      switch(kEvent.$dom_keyIdentifier){
-        case "Up":
+      switch(kEvent.keyCode){
+        case KeyCode.UP:
           processKeyEvent(Direction.UP, Direction.DOWN); break;
-        case "Down":
+        case KeyCode.DOWN:
           processKeyEvent(Direction.DOWN, Direction.UP); break;
-        case "Left":
+        case KeyCode.LEFT:
           processKeyEvent(Direction.LEFT, Direction.RIGHT); break;
-        case "Right":
+        case KeyCode.RIGHT:
           processKeyEvent(Direction.RIGHT, Direction.LEFT); break;
       }
     }
