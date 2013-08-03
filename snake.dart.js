@@ -4678,7 +4678,7 @@ Snake: {"": "Object;queue",
     return this.verifyNewHead$2(new $.Snake_moveDown_closure(), new $.Snake_moveDown_closure0());
   },
   Snake$1: function(initSize) {
-    var max, x, y, t1, i, tile;
+    var max, x, t1, i, tile;
     $.get$randomGenerator();
     max = 40 - initSize * 2;
     if (max < 0)
@@ -4686,13 +4686,10 @@ Snake: {"": "Object;queue",
     if (max > 4294967295)
       max = 4294967295;
     x = Math.random() * max >>> 0;
-    $.get$randomGenerator();
-    max = 40;
-    y = Math.random() * max >>> 0;
     for (t1 = this.queue, i = 0; i < initSize; ++i) {
       tile = new $.Tile(null, null);
       tile.xpos = x;
-      tile.ypos = y;
+      tile.ypos = 0;
       tile.paint$1("green");
       t1._add$1(tile);
       ++x;

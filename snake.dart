@@ -12,8 +12,8 @@ const String FRUIT_COLOR = "black";
 const String SNAKE_COLOR = "green";
 const int INIT_SNAKE_SIZE = 6;
 
-var canvas = query('#canvas');
-var ctx = canvas.getContext('2d');
+CanvasElement canvas = query('#canvas');
+CanvasRenderingContext2D ctx = canvas.getContext('2d');
 
 Tile fruit;
 Snake snake;
@@ -100,7 +100,7 @@ class Snake {
   
   Snake(int initSize){
     int x = randomGenerator.nextInt(HORIZONTAL_TILES-initSize*2);
-    int y = randomGenerator.nextInt(VERTICAL_TILES);
+    int y = 0; // start at the top
     for(int i=0; i<initSize; i++){
       Tile tile = new Tile(x, y);
       tile.paint(SNAKE_COLOR);
